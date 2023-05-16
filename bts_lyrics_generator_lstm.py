@@ -62,10 +62,7 @@ print(len(word_index))
 
 sqs = tokenizer.texts_to_sequences(final_lyrics[1:])
 padded = pad_sequences(sqs, padding='pre')
-print(final_lyrics[0])
-print(padded[0])
 
-padded.shape
 
 max_len = max([len(x) for x in sqs])
 
@@ -91,7 +88,7 @@ model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accurac
 history = model.fit(xs, ys, epochs=100, verbose=1, callbacks=[es, cb, lrr])
 
 import pickle as pl
-pl.dump(model,open('model.pkl','wb'))
+pl.dump(model,open('model_lstm.pkl','wb'))
 
 
 

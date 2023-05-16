@@ -216,5 +216,5 @@ context = torch.zeros((1, 1), dtype=torch.long, device=device)
 print(tiktoken.decode(m.generate(context, max_new_tokens=2000)[0].tolist()))
 
 import pickle as pl
-pl.dump(model,open('model.pkl','wb'))
+pl.dump(model,open('model2.pkl','wb'))
 
